@@ -1,10 +1,10 @@
-{<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TOURNAMENT MOBILE LEGEND - GROUP D</title>
-<meta name="description" content="Tournament Mobile Legends Group D SEASON 1">
+<meta name="description" content="Tournament Mobile Legends Group D">
 <style>
 :root{--gold:#ffd76a;--cyan:#55e8ff;--dark:#030712;--line:rgba(255,215,106,.28)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -60,29 +60,23 @@ footer{text-align:center;padding:30px 15px;color:#7185b5;border-top:1px solid rg
 <footer>TOURNAMENT MOBILE LEGEND • GROUP D © 2026</footer>
 <script>
 const teams=[
-{name:"TEAM 1",players:["ARRIE • EXP","OKKY • JUNGLE","IMANUEL • MID","AKSAN • GOLD","VINCENT • ROAM"]},
-{name:"TEAM 2",players:["M DWI • EXP","PAK ALI • JUNGLE","DIMAS • MID","MANISHA • GOLD","ANDREW • ROAM"]},
-{name:"TEAM 3",players:["FIKRI • EXP","SAKUL • JUNGLE","INA • MID","FIKRI • GOLD","DANIEL DARWIS • ROAM"]},
-{name:"TEAM 4",players:["ADITYA • EXP","JASON • JUNGLE","JOES • MID","DAVID• GOLD","GOE • ROAM"]};
-{name:"TEAM 5",players:["ROBERT • EXP","BAYU • JUNGLE","EFRIN • MID","DANIEL GIDEON • GOLD","CELVIN • ROAM"]}];
-{name:"TEAM 6",players:["ARIF • EXP","SANTRI • JUNGLE","DICKY • MID","YANTI • GOLD","MARKUS • ROAM"]}];
-{name:"TEAM 7",players:["JIMMY • EXP","STEVEN • JUNGLE","JANSENT • MID","ARYA • GOLD","BAIM • ROAM"]}]; 
-{name:"TEAM 8",players:["BUDI • EXP","RICCHARD • JUNGLE","SARIMA • MID","RIDHA • GOLD","RAJA • ROAM"]}];
-{name:"TEAM 9",players:["FAUZAN • EXP","KEVIN • JUNGLE","TENIKI • MID","ODEL • GOLD","NANDOS • ROAM"]}];
-{name:"TEAM 10",players:["NEOFRENDI • EXP","KADAFI • JUNGLE","DELIA • MID","AGUS S • GOLD","MESIN TUA ( BENNI ) • ROAM"]}]; 
+{name:"TEAM 1",players:["RIZKY • EXP","FAJAR • JUNGLE","DANU • MID","ALDI • GOLD","BIMA • ROAM"]},
+{name:"TEAM 2",players:["ARIF • EXP","REZA • JUNGLE","FIKRI • MID","ILHAM • GOLD","RANGGA • ROAM"]},
+{name:"TEAM 3",players:["ANDI • EXP","DION • JUNGLE","RAMA • MID","BAGAS • GOLD","YOGA • ROAM"]},
+{name:"TEAM 4",players:["IQBAL • EXP","RAKA • JUNGLE","ADIT • MID","FARHAN • GOLD","DAVA • ROAM"]};
+{name:"TEAM 5",players:["IQBAL • EXP","RAKA • JUNGLE","ADIT • MID","FARHAN • GOLD","DAVA • ROAM"]}];
+{name:"TEAM 6",players:["IQBAL • EXP","RAKA • JUNGLE","ADIT • MID","FARHAN • GOLD","DAVA • ROAM"]}];
+{name:"TEAM 7",players:["IQBAL • EXP","RAKA • JUNGLE","ADIT • MID","FARHAN • GOLD","DAVA • ROAM"]}];
 const schedules=[
-{date:"20 SEP 2026",time:"19:00",a:"TEAM 1",b:"TEAM 2",status:"MATCH 01"},
-{date:"20 SEP 2026",time:"21:00",a:"TEAM 3",b:"TEAM 4",status:"MATCH 02"},
-{date:"21 SEP 2026",time:"19:00",a:"TEAM 5",b:"TEAM 2",status:"MATCH 03"},
-{date:"21 SEP 2026",time:"21:00",a:"TEAM 3 ",b:"TEAM 1",status:"MATCH 04"},
-{date:"22 SEP 2026",time:"19:00",a:"TEAM 4",b:"TEAM 5",status:"MATCH 05"},
-{date:"22 SEP 2026",time:"19:00",a:"TEAM 2",b:"TEAM 3",status:"MATCH 05"},
+{date:"18 SEP 2026",time:"19:00",a:"TEAM AURORA",b:"TEAM TITAN",status:"MATCH 01"},
+{date:"18 SEP 2026",time:"21:00",a:"TEAM PHOENIX",b:"TEAM DRAGON",status:"MATCH 02"},
+{date:"19 SEP 2026",time:"19:00",a:"TEAM AURORA",b:"TEAM PHOENIX",status:"MATCH 03"},
+{date:"19 SEP 2026",time:"21:00",a:"TEAM TITAN",b:"TEAM DRAGON",status:"MATCH 04"},
+{date:"20 SEP 2026",time:"19:00",a:"TEAM AURORA",b:"TEAM DRAGON",status:"MATCH 05"},
+{date:"20 SEP 2026",time:"21:00",a:"TEAM TITAN",b:"TEAM PHOENIX",status:"MATCH 06"}];
 const standings=[
-{team:"TEAM ",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 1  ",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 2 ",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 3",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 4",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 5",mp:0,w:0,l:0,gd:"0",point:0}];
-{team:"TEAM ",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 1  ",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 2 ",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 3",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 4",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM 5",mp:0,w:0,l:0,gd:"0",point:0}];
+{team:"TEAM AURORA",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM TITAN",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM PHOENIX",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM DRAGON",mp:0,w:0,l:0,gd:"0",point:0}];
 const playoff=[
-{round:"QUARTER FINAL 1",a:"RANK 1 GROUP D",b:"RANK 4 GROUP D",playersA:"Roster Rank 1",playersB:"Roster Rank 4"},
-{round:"QUARTER FINAL 2",a:"RANK 2 GROUP D",b:"RANK 3 GROUP D",playersA:"Roster Rank 2",playersB:"Roster Rank 3"}];
 {round:"QUARTER FINAL 1",a:"RANK 1 GROUP D",b:"RANK 4 GROUP D",playersA:"Roster Rank 1",playersB:"Roster Rank 4"},
 {round:"QUARTER FINAL 2",a:"RANK 2 GROUP D",b:"RANK 3 GROUP D",playersA:"Roster Rank 2",playersB:"Roster Rank 3"}];
 const semifinal=[
@@ -99,7 +93,7 @@ document.getElementById("finalBox").innerHTML=`<div class="meta">${final.info}</
 
 function showSection(id){
 document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
-document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
+document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"))
 document.getElementById(id).classList.add("active");
 document.querySelector(`[data-target="${id}"]`).classList.add("active");
 history.replaceState(null,"","#"+id);
@@ -112,4 +106,3 @@ if(["group","jadwal","peringkat","playoff","semifinal","final"].includes(start))
 </script>
 </body>
 </html>
-
