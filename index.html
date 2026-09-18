@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOURNAMENT MOBILE LEGEND - GROUP D</title>
+<meta name="description" content="Tournament Mobile Legends Group D">
+<style>
+:root{--gold:#ffd76a;--cyan:#55e8ff;--dark:#030712;--line:rgba(255,215,106,.28)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#fff;background:#020611;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(circle at 75% 20%,rgba(52,183,255,.28),transparent 28%),radial-gradient(circle at 20% 70%,rgba(117,48,255,.24),transparent 30%),linear-gradient(135deg,#020611,#07173c 48%,#020611)}
+body:after{content:"";position:fixed;inset:0;z-index:-2;opacity:.5;background-image:linear-gradient(120deg,transparent 48%,rgba(255,215,106,.09) 49%,transparent 50%),linear-gradient(60deg,transparent 48%,rgba(85,232,255,.07) 49%,transparent 50%);background-size:85px 85px}
+.hero-art{position:fixed;right:-90px;bottom:-30px;width:min(55vw,720px);height:90vh;z-index:-1;pointer-events:none;opacity:.38;filter:drop-shadow(0 0 30px rgba(85,232,255,.35))}
+.hero-art .orb{position:absolute;width:310px;height:310px;border-radius:50%;right:22%;top:8%;border:2px solid rgba(255,215,106,.42);box-shadow:0 0 70px rgba(85,232,255,.25),inset 0 0 60px rgba(85,232,255,.12)}
+.hero-art .body{position:absolute;right:25%;bottom:0;width:250px;height:620px;background:linear-gradient(155deg,rgba(25,57,111,.9),rgba(2,7,20,.98));clip-path:polygon(46% 0,67% 7%,76% 22%,69% 37%,86% 58%,100% 100%,20% 100%,31% 64%,15% 44%,28% 25%);border:2px solid rgba(255,215,106,.25)}
+.hero-art .weapon{position:absolute;right:4%;bottom:34%;width:430px;height:15px;background:linear-gradient(90deg,transparent,#ffd76a,#fff,#55e8ff,transparent);transform:rotate(-27deg);box-shadow:0 0 25px #55e8ff}
+.hero-art .wing{position:absolute;right:41%;bottom:23%;width:330px;height:210px;background:linear-gradient(145deg,rgba(85,232,255,.25),rgba(117,48,255,.02));clip-path:polygon(50% 0,100% 35%,75% 45%,100% 100%,52% 63%,0 100%,26% 43%,0 34%)}
+header{min-height:72vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:90px 18px 50px}
+.badge{display:inline-block;padding:8px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(255,215,106,.08);color:var(--gold);letter-spacing:2px;font-weight:700;font-size:12px}
+h1{margin:18px 0 8px;font-size:clamp(42px,8vw,88px);line-height:.95;text-transform:uppercase;letter-spacing:2px;text-shadow:0 0 25px rgba(85,232,255,.45),0 5px 30px #000}
+h1 span{color:var(--gold)}.subtitle{color:#c9d8ff;font-size:clamp(14px,2vw,19px);margin:14px auto 26px;max-width:700px}
+.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.btn{display:inline-block;border:1px solid rgba(255,215,106,.5);color:#fff;background:linear-gradient(135deg,rgba(255,159,28,.18),rgba(24,66,130,.35));padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:800}
+nav{position:sticky;top:0;z-index:20;padding:10px;background:rgba(2,6,17,.86);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-wrap{max-width:1200px;margin:auto;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}.nav-wrap::-webkit-scrollbar{display:none}
+.nav-btn{flex:0 0 auto;border:1px solid rgba(255,255,255,.1);background:#0a1530;color:#bcd0ff;padding:11px 16px;border-radius:10px;cursor:pointer;font-weight:800}
+.nav-btn.active,.nav-btn:hover{color:#071021;background:linear-gradient(135deg,var(--gold),#fff0a8);border-color:var(--gold)}
+main{max-width:1200px;margin:auto;padding:20px 16px 80px}section{display:none;animation:fade .35s ease}section.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.section-title{text-align:center;margin:30px 0}.section-title h2{font-size:34px;margin:0 0 7px}.section-title p{color:#9db2e4;margin:0}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{background:linear-gradient(145deg,rgba(13,29,66,.88),rgba(5,12,30,.82));border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 14px 45px rgba(0,0,0,.25)}
+.team-card{position:relative;overflow:hidden}.team-name{font-size:23px;color:var(--gold);font-weight:900;margin-bottom:10px}.player-list{list-style:none;padding:0;margin:0}
+.player-list li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.07);color:#dbe5ff}.player-list li:last-child{border-bottom:0}.role{float:right;color:#6feaff;font-size:11px}
+.table-wrap{overflow:auto;border-radius:16px;border:1px solid var(--line)}table{width:100%;border-collapse:collapse;min-width:650px;background:rgba(4,11,27,.72)}
+th,td{padding:14px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,.07)}th{background:rgba(255,215,106,.1);color:var(--gold);text-transform:uppercase;font-size:12px}
+.rank{font-weight:900;color:var(--gold)}.match{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}.team{text-align:center;font-size:18px;font-weight:900}
+.vs{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#ffd76a,#ff8c00);color:#071021;font-weight:900;box-shadow:0 0 22px rgba(255,215,106,.25)}
+.meta{text-align:center;color:#91a8df;font-size:13px;margin-bottom:12px}.status{display:inline-block;margin-top:8px;padding:5px 9px;border-radius:999px;background:rgba(85,232,255,.1);color:#6feaff;font-size:11px}
+.winner{color:#6feaff}.final-box{border:1px solid var(--gold);box-shadow:0 0 35px rgba(255,215,106,.12)}
+.note{margin-top:18px;padding:14px;border-left:3px solid var(--gold);background:rgba(255,215,106,.06);color:#b9c8eb;border-radius:8px}
+footer{text-align:center;padding:30px 15px;color:#7185b5;border-top:1px solid rgba(255,255,255,.08)}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.hero-art{width:95vw;right:-160px;opacity:.22}header{min-height:66vh}}
+</style>
+</head>
+<body>
+<div class="hero-art" aria-hidden="true"><div class="orb"></div><div class="body"></div><div class="wing"></div><div class="weapon"></div></div>
+<header><div><div class="badge">MOBILE LEGENDS • ESPORTS TOURNAMENT</div><h1>GROUP <span>D</span></h1><p class="subtitle">Tournament Hub — daftar tim, roster pemain, jadwal, klasemen Group D dan fase knockout.</p><div class="hero-buttons"><a class="btn" href="#group">LIHAT GROUP D</a><a class="btn" href="#jadwal">JADWAL PERTANDINGAN</a></div></div></header>
+<nav><div class="nav-wrap">
+<button class="nav-btn active" data-target="group">GROUP</button><button class="nav-btn" data-target="jadwal">JADWAL</button><button class="nav-btn" data-target="peringkat">PERINGKAT GROUP</button><button class="nav-btn" data-target="playoff">PLAYOFF</button><button class="nav-btn" data-target="semifinal">SEMI FINAL</button><button class="nav-btn" data-target="final">FINAL</button>
+</div></nav>
+<main>
+<section id="group" class="active"><div class="section-title"><h2>GROUP D</h2><p>Tim & pemain</p></div><div class="grid" id="teams"></div><div class="note">EDIT DATA: ubah nama tim dan pemain pada bagian <b>const teams</b> di JavaScript paling bawah.</div></section>
+<section id="jadwal"><div class="section-title"><h2>JADWAL</h2><p>Jadwal pertandingan Group D</p></div><div class="grid" id="schedule"></div></section>
+<section id="peringkat"><div class="section-title"><h2>PERINGKAT GROUP D</h2><p>Klasemen sementara</p></div><div class="table-wrap"><table><thead><tr><th>#</th><th>Tim</th><th>MP</th><th>W</th><th>L</th><th>GD</th><th>POINT</th></tr></thead><tbody id="standing"></tbody></table></div></section>
+<section id="playoff"><div class="section-title"><h2>PLAYOFF</h2><p>Knockout stage</p></div><div class="grid" id="playoffList"></div></section>
+<section id="semifinal"><div class="section-title"><h2>SEMI FINAL</h2><p>Perjalanan menuju Grand Final</p></div><div class="grid" id="semiList"></div></section>
+<section id="final"><div class="section-title"><h2>GRAND FINAL</h2><p>Perebutan juara Tournament Group D</p></div><div class="card final-box" id="finalBox"></div></section>
+</main>
+<footer>TOURNAMENT MOBILE LEGEND • GROUP D © 2026</footer>
+<script>
+const teams=[
+{name:"TEAM AURORA",players:["RIZKY • EXP","FAJAR • JUNGLE","DANU • MID","ALDI • GOLD","BIMA • ROAM"]},
+{name:"TEAM TITAN",players:["ARIF • EXP","REZA • JUNGLE","FIKRI • MID","ILHAM • GOLD","RANGGA • ROAM"]},
+{name:"TEAM PHOENIX",players:["ANDI • EXP","DION • JUNGLE","RAMA • MID","BAGAS • GOLD","YOGA • ROAM"]},
+{name:"TEAM DRAGON",players:["IQBAL • EXP","RAKA • JUNGLE","ADIT • MID","FARHAN • GOLD","DAVA • ROAM"]}];
+const schedules=[
+{date:"18 SEP 2026",time:"19:00",a:"TEAM AURORA",b:"TEAM TITAN",status:"MATCH 01"},
+{date:"18 SEP 2026",time:"21:00",a:"TEAM PHOENIX",b:"TEAM DRAGON",status:"MATCH 02"},
+{date:"19 SEP 2026",time:"19:00",a:"TEAM AURORA",b:"TEAM PHOENIX",status:"MATCH 03"},
+{date:"19 SEP 2026",time:"21:00",a:"TEAM TITAN",b:"TEAM DRAGON",status:"MATCH 04"},
+{date:"20 SEP 2026",time:"19:00",a:"TEAM AURORA",b:"TEAM DRAGON",status:"MATCH 05"},
+{date:"20 SEP 2026",time:"21:00",a:"TEAM TITAN",b:"TEAM PHOENIX",status:"MATCH 06"}];
+const standings=[
+{team:"TEAM AURORA",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM TITAN",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM PHOENIX",mp:0,w:0,l:0,gd:"0",point:0},{team:"TEAM DRAGON",mp:0,w:0,l:0,gd:"0",point:0}];
+const playoff=[
+{round:"QUARTER FINAL 1",a:"RANK 1 GROUP D",b:"RANK 4 GROUP D",playersA:"Roster Rank 1",playersB:"Roster Rank 4"},
+{round:"QUARTER FINAL 2",a:"RANK 2 GROUP D",b:"RANK 3 GROUP D",playersA:"Roster Rank 2",playersB:"Roster Rank 3"}];
+const semifinal=[
+{round:"SEMI FINAL 1",a:"WINNER QF 1",b:"WINNER QF 2",info:"BO3 / BO5"},
+{round:"SEMI FINAL 2",a:"TBD",b:"TBD",info:"BO3 / BO5"}];
+const final={a:"WINNER SEMI FINAL",b:"WINNER SEMI FINAL",info:"GRAND FINAL • BO5"};
+
+document.getElementById("teams").innerHTML=teams.map(t=>`<div class="card team-card"><div class="team-name">${t.name}</div><ul class="player-list">${t.players.map(p=>{let x=p.split(" • ");return `<li>${x[0]} <span class="role">${x[1]||"PLAYER"}</span></li>`}).join("")}</ul></div>`).join("");
+document.getElementById("schedule").innerHTML=schedules.map(m=>`<div class="card"><div class="meta">${m.date} • ${m.time} WIB</div><div class="match"><div class="team">${m.a}</div><div class="vs">VS</div><div class="team">${m.b}</div></div><div style="text-align:center"><span class="status">${m.status}</span></div></div>`).join("");
+document.getElementById("standing").innerHTML=standings.map((s,i)=>`<tr><td class="rank">${i+1}</td><td><b>${s.team}</b></td><td>${s.mp}</td><td>${s.w}</td><td>${s.l}</td><td>${s.gd}</td><td class="rank">${s.point}</td></tr>`).join("");
+document.getElementById("playoffList").innerHTML=playoff.map(p=>`<div class="card"><div class="meta">${p.round}</div><div class="match"><div class="team">${p.a}<br><small>${p.playersA}</small></div><div class="vs">VS</div><div class="team">${p.b}<br><small>${p.playersB}</small></div></div></div>`).join("");
+document.getElementById("semiList").innerHTML=semifinal.map(p=>`<div class="card"><div class="meta">${p.round} • ${p.info}</div><div class="match"><div class="team winner">${p.a}</div><div class="vs">VS</div><div class="team winner">${p.b}</div></div></div>`).join("");
+document.getElementById("finalBox").innerHTML=`<div class="meta">${final.info}</div><div class="match"><div class="team winner">${final.a}</div><div class="vs">VS</div><div class="team winner">${final.b}</div></div><div style="text-align:center;margin-top:25px;color:#9db2e4">🏆 CHAMPION: TBD</div>`;
+
+function showSection(id){
+document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
+document.getElementById(id).classList.add("active");
+document.querySelector(`[data-target="${id}"]`).classList.add("active");
+history.replaceState(null,"","#"+id);
+window.scrollTo({top:document.querySelector("nav").offsetTop-8,behavior:"smooth"});
+}
+document.querySelectorAll(".nav-btn").forEach(b=>b.addEventListener("click",()=>showSection(b.dataset.target)));
+document.querySelectorAll("a[href^='#']").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();showSection(a.getAttribute("href").slice(1))}));
+const start=location.hash.replace("#","");
+if(["group","jadwal","peringkat","playoff","semifinal","final"].includes(start))showSection(start);
+</script>
+</body>
+</html>
